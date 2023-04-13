@@ -179,8 +179,8 @@ variable "block_device_mappings" {
   type        = any
   default     =     {
     device_name = "/dev/xvda"
-    ebs {
-      volume_type = "gp3",
+    ebs = {
+      volume_type = "gp3"
       volume_size = 20
     }
   }
