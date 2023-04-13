@@ -177,7 +177,13 @@ variable "ram_disk_id" {
 variable "block_device_mappings" {
   description = "Specify volumes to attach to the instance besides the volumes specified by the AMI"
   type        = any
-  default     = {}
+  default     =     {
+    device_name = "/dev/xvda"
+    ebs {
+      volume_type = "gp3",
+      volume_size = 20
+    }
+  }
 }
 
 variable "capacity_reservation_specification" {
